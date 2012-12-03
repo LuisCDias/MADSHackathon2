@@ -65,6 +65,14 @@
             <classpath refid="helloworld.classpath"/>
         </java>
     </target>
+    <target name="test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="HelloTest" todir="${junit.output.dir}"/>
+            <classpath refid="helloworld.classpath"/>
+        </junit>
+    </target>
     <target name="junitreport">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
